@@ -3,20 +3,34 @@ let pokemonList = ["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","C
 // Answers
 
 // Question 1
-
-
+    document.querySelector("#host-name").innerHTML = "Ammad"
+    document.querySelector("#collaborator-name").innerHTML = "Noah"
 
 
 // Question 2
 // You can also create their own CSS classes in style.css file and use that. 
-
-
-
+document.getElementById("instruction_button")
+// Assuming there is a button with ID instruction_button  Turn it into a toggle button. On click, it should hide/remove all the instructions  give me javascript below
+document.getElementById("instruction_button").addEventListener("click", function(){
+    let instructions = document.querySelectorAll(".question");
+    instructions.forEach(instruction => {
+        instruction.style.display = instruction.style.display === "none" ? "block" : "none";
+    });
+});
 
 // Question 3
 // Try change event first
 // There is another event which fires for every character. This is what we want to use.
-
+// In javascript for assuming this is html
+// Add an event listener to the first name input field
+document.getElementById("first_name").addEventListener("input", function() {
+    let firstName = document.getElementById("first_name").value;
+    if (firstName.toLowerCase() === "john") {
+        document.getElementById("last_name").value = "Doe";
+    } else {
+        document.getElementById("last_name").value = "";
+    }
+});
 
 
 // Question 4
@@ -28,7 +42,28 @@ let pokemonList = ["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","C
 // Question 5
 // Try change event first
 // There is another event which fires for every character. This is what we want to use.
+ // Select the password fields and the alert text
+const password1Input = document.getElementById('password');
+const password2Input = document.getElementById('confirm_password');
+passwordMatchAlert = document.getElementById('password-alert');
 
+ // Function to check if passwords match
+ passwordMatchAlert.addEventListener("input", function() {
+   checkPasswordMatch();
+ });
+
+ function checkPasswordMatch() {
+    const password1 = password1Input.value;
+    const password2 = password2Input.value;
+
+   // Update alert text based on password match status
+   console.log(password1, password2);
+   if (password1 === password2) {
+     passwordMatchAlert.textContent = "Password Matches";
+   } else {
+     passwordMatchAlert.textContent = "Password does not match";
+   }
+ }
 
 
 
